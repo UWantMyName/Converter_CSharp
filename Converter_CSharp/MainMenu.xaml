@@ -1,10 +1,10 @@
-﻿<Window x:Class="Converter_CSharp.MainWindow"
+﻿<Window x:Name="MainMenu" x:Class="Converter_CSharp.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Converter_CSharp"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Label Content="Welcome to the Converter App!&#xD;&#xA;" HorizontalAlignment="Left" Margin="281,10,0,0" VerticalAlignment="Top" Width="187" Height="49"/>
+        Title="MainWindow" Height="450" Width="400">
+    <Label Content="Main Menu" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" Width="380" Height="49" FontFamily="Agency FB" FontSize="36" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
 </Window>
