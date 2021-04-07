@@ -5,8 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Converter_CSharp"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="400">
-    <Grid Margin="0,6,0,-6">
-        <Label Content="Main Menu&#xD;&#xA;" HorizontalAlignment="Center" VerticalAlignment="Top" Width="390" HorizontalContentAlignment="Center"/>
+        Title="Converter Application" Height="450" Width="400">
+    <Grid Margin="0,0,0,-6">
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FFF9C8C8"/>
+                <GradientStop Color="#FFE2F8FF" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Label Content="Main Menu&#xD;&#xA;" HorizontalAlignment="Center" VerticalAlignment="Top" Width="380" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Agency FB" FontSize="36" Height="48" Margin="0,34,0,0"/>
+        <Button Content="EXIT Application" HorizontalAlignment="Center" Height="35" Margin="0,378,0,0" VerticalAlignment="Top" Width="380" FontFamily="Agency FB" FontSize="20" Background="White" BorderBrush="Black"/>
+        <Button Content="Currency Converter" HorizontalAlignment="Center" Height="35" Margin="0,338,0,0" VerticalAlignment="Top" Width="380" FontFamily="Agency FB" FontSize="20" Background="White" BorderBrush="Black"/>
+        <Button Content="Temperature Converter" HorizontalAlignment="Center" Height="35" Margin="0,298,0,0" VerticalAlignment="Top" Width="380" FontFamily="Agency FB" FontSize="20" Background="White" BorderBrush="Black"/>
     </Grid>
 </Window>
