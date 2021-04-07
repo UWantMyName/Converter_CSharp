@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Converter_CSharp"
         mc:Ignorable="d"
-        Title="TemperatureConverter" Height="400" Width="400">
+        Title="TemperatureConverter" Height="600" Width="600">
     <Grid>
         <Grid.Background>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -13,7 +13,16 @@
                 <GradientStop Color="#FF06CDD6" Offset="0.187"/>
             </LinearGradientBrush>
         </Grid.Background>
-        <Label Content="Celsius and Fahrenheit Temperature Converter" HorizontalAlignment="Center" VerticalAlignment="Top" Height="43" Width="400" Foreground="#FF00F3FF" FontSize="18" HorizontalContentAlignment="Center" BorderBrush="White"/>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="0,305,0,0" VerticalAlignment="Top" Height="69" Width="187"/>
+        <Label Content="Celsius and Fahrenheit Temperature Converter" HorizontalAlignment="Center" VerticalAlignment="Top" Height="100" Width="580" Foreground="#FF00F3FF" FontSize="36" HorizontalContentAlignment="Center" BorderBrush="White"/>
+        <Button Style="{DynamicResource ButtonStyle1}" Content="C to F" HorizontalAlignment="Left" Margin="44,436,0,0" VerticalAlignment="Top" Height="103" Width="233" Background="{x:Null}" FontSize="48" FontFamily="Lucida Sans" Cursor="Hand" Click="Button_Click">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+        <Button Style="{DynamicResource ButtonStyle2}" Content="F to C" HorizontalAlignment="Left" Margin="358,436,0,0" VerticalAlignment="Top" Height="103" Width="198" Background="{x:Null}" FontSize="48" FontFamily="Lucida Sans" Cursor="Hand">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
     </Grid>
 </Window>
