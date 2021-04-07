@@ -6,5 +6,7 @@
         xmlns:local="clr-namespace:Converter_CSharp"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="400">
-    <Label Content="Main Menu" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" Width="380" Height="49" FontFamily="Agency FB" FontSize="36" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+    <Grid Margin="0,6,0,-6">
+        <Label Content="Main Menu&#xD;&#xA;" HorizontalAlignment="Center" VerticalAlignment="Top" Width="390" HorizontalContentAlignment="Center"/>
+    </Grid>
 </Window>
