@@ -38,7 +38,7 @@ namespace Converter_CSharp
 
 		private void ExitClick(object sender, RoutedEventArgs e)
 		{
-
+			this.Close();
 		}
 	}
 }
