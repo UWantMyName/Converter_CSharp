@@ -24,5 +24,21 @@ namespace Converter_CSharp
 		{
 			InitializeComponent();
 		}
+
+
+		private void TemperatureConvClick(object sender, RoutedEventArgs e)
+		{
+
+		}
+
+		private void CurrencyConvClick(object sender, RoutedEventArgs e)
+		{
+
+		}
+
+		private void ExitClick(object sender, RoutedEventArgs e)
+		{
+			this.Close();
+		}
 	}
 }
