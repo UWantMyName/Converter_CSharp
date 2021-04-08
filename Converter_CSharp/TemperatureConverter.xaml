@@ -6,13 +6,7 @@
         xmlns:local="clr-namespace:Converter_CSharp"
         mc:Ignorable="d"
         Title="TemperatureConverter" Height="450" Width="400">
-    <Grid>
-        <Grid.Background>
-            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                <GradientStop Color="Black" Offset="0.057"/>
-                <GradientStop Color="#FF06CDD6" Offset="0.187"/>
-            </LinearGradientBrush>
-        </Grid.Background>
+    <Grid Background="#FF00565F">
         <Label Content="Celsius and Fahrenheit &#xD;&#xA;Temperature Converter" HorizontalAlignment="Center" VerticalAlignment="Top" Height="100" Width="400" Foreground="#FF00F3FF" FontSize="24" HorizontalContentAlignment="Center" BorderBrush="White"/>
     </Grid>
 </Window>
