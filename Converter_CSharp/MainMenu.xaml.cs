@@ -28,7 +28,8 @@ namespace Converter_CSharp
 
 		private void TemperatureConvClick(object sender, RoutedEventArgs e)
 		{
-
+			TemperatureConverter w = new TemperatureConverter();
+			w.Show();
 		}
 
 		private void CurrencyConvClick(object sender, RoutedEventArgs e)
