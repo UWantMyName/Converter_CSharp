@@ -22,9 +22,34 @@ namespace Converter_CSharp
 			InitializeComponent();
 		}
 
-		private void Button_Click(object sender, RoutedEventArgs e)
+		private void C_to_F_Click(object sender, RoutedEventArgs e)
 		{
+			try
+			{
+				float cTemp = float.Parse(CelsiusTemp.Text);
+				float fTemp = (cTemp * 9) / 5 + 32;
 
+				FahrenheitTemp.Text = fTemp.ToString();
+			}
+			catch (Exception exc)
+			{
+				MessageBox.Show(exc.ToString());
+			}
+		}
+
+		private void F_to_C_Click(object sender, RoutedEventArgs e)
+		{
+			try
+			{
+				float fTemp = float.Parse(FahrenheitTemp.Text);
+				float cTemp = ((fTemp - 32) * 5) / 9;
+
+				CelsiusTemp.Text = cTemp.ToString();
+			}
+			catch (Exception exc)
+			{
+				MessageBox.Show(exc.ToString());
+			}
 		}
 	}
 }

@@ -6,10 +6,71 @@
         xmlns:local="clr-namespace:Converter_CSharp"
         mc:Ignorable="d"
         Title="TemperatureConverter" Height="450" Width="400">
+    <Window.Resources>
+        <Style x:Key="FocusVisual">
+            <Setter Property="Control.Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Rectangle Margin="2" StrokeDashArray="1 2" SnapsToDevicePixels="true" StrokeThickness="1" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <SolidColorBrush x:Key="Button.Static.Background" Color="#FFDDDDDD"/>
+        <SolidColorBrush x:Key="Button.Static.Border" Color="#FF707070"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Background" Color="#FFBEE6FD"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Border" Color="#FF3C7FB1"/>
+        <SolidColorBrush x:Key="Button.Pressed.Background" Color="#FFC4E5F6"/>
+        <SolidColorBrush x:Key="Button.Pressed.Border" Color="#FF2C628B"/>
+        <SolidColorBrush x:Key="Button.Disabled.Background" Color="#FFF4F4F4"/>
+        <SolidColorBrush x:Key="Button.Disabled.Border" Color="#FFADB2B5"/>
+        <SolidColorBrush x:Key="Button.Disabled.Foreground" Color="#FF838383"/>
+        <Style x:Key="ButtonStyle3" TargetType="{x:Type Button}">
+            <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
+            <Setter Property="Background" Value="{StaticResource Button.Static.Background}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border}"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="border" Background="{TemplateBinding Background}" BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="{TemplateBinding BorderBrush}" SnapsToDevicePixels="true">
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsDefaulted" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.MouseOver.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.MouseOver.Border}"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Pressed.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Pressed.Border}"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Disabled.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Disabled.Border}"/>
+                                <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{StaticResource Button.Disabled.Foreground}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
     <Grid Background="#FF00565F">
         <Label Content="Celsius and Fahrenheit &#xD;&#xA;Temperature Converter" HorizontalAlignment="Center" VerticalAlignment="Top" Height="78" Width="400" Foreground="#FF00F3FF" FontSize="24" HorizontalContentAlignment="Center" BorderBrush="White"/>
         <Menu Margin="0,336,0,0" Background="#FF003338"/>
-        <Button Content="F to C" HorizontalAlignment="Left" VerticalAlignment="Top" Height="74" Width="200" Margin="200,337,0,0" FontSize="36" FontFamily="Lucida Sans" Background="#FF003338"/>
-        <Button Content="C to F" HorizontalAlignment="Left" VerticalAlignment="Top" Height="74" Width="200" Margin="0,337,0,0" FontSize="36" FontFamily="Lucida Sans" Background="#FF003338"/>
+        <Button x:Name="F_to_C" Content="F to C" HorizontalAlignment="Left" VerticalAlignment="Top" Height="74" Width="200" Margin="200,336,0,0" FontSize="36" FontFamily="Lucida Sans" Background="#FF003338" BorderBrush="#FF00E0CC" Cursor="Hand" Click="F_to_C_Click"/>
+        <Button x:Name="C_to_F" Style="{DynamicResource ButtonStyle3}" Content="C to F" HorizontalAlignment="Left" VerticalAlignment="Top" Height="74" Width="200" Margin="0,336,0,0" FontSize="36" FontFamily="Lucida Sans" Background="#FF003338" BorderBrush="#FF00E0CC" Cursor="Hand" Click="C_to_F_Click"/>
+        <Label Content="Celsius&#xD;&#xA;" HorizontalAlignment="Left" Margin="10,116,0,0" VerticalAlignment="Top" Width="150" HorizontalContentAlignment="Center" FontFamily="Lucida Sans" FontSize="24" Height="39"/>
+        <Label Content="Fahrenheit&#xA;" HorizontalAlignment="Left" Margin="240,116,0,0" VerticalAlignment="Top" Width="150" HorizontalContentAlignment="Center" FontFamily="Lucida Sans" FontSize="24" Height="39"/>
+        <TextBox x:Name="CelsiusTemp" HorizontalAlignment="Left" Margin="25,155,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="FahrenheitTemp" HorizontalAlignment="Left" Margin="255,155,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
     </Grid>
 </Window>
