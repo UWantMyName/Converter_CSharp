@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:Converter_CSharp"
              StartupUri="MainMenu.xaml">
+<<<<<<< HEAD
     <Application.Resources>
          
         <Style x:Key="FocusVisual">
@@ -100,4 +101,7 @@
             </Setter>
         </Style>
     </Application.Resources>
+=======
+    
+>>>>>>> Soumya
 </Application>
