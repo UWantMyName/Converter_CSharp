@@ -21,47 +21,48 @@ namespace Converter_CSharp
 		{
 			InitializeComponent();
 		}
-
-		private bool IsANumber(string text)
-		{
-			bool number = true;
-
-			foreach (char c in text)
-			{
-				if ((int)c < 48 && c != '.' || (int)c > 57 && c != '.') number = false;
-			}
-
-			return number;
-		}
 		private void Button_Click(object sender, RoutedEventArgs e)
 		{
 			value.Text = value.Text.Trim();
-		
-			if (value.Text == "" || !IsANumber(value.Text))
-			{
-				MessageBox.Show("You have not entered a proper number into the CONVERT box.\nTry again.");
-				return;
-			}
 
-			else if (initialcurr.SelectedIndex == nextcurr.SelectedIndex|| initialcurr.SelectedIndex < 0 || nextcurr.SelectedIndex < 0)
+			if (initialcurr.SelectedIndex == nextcurr.SelectedIndex|| initialcurr.SelectedIndex < 0 || nextcurr.SelectedIndex < 0)
 			{
 				MessageBox.Show("You may have not selected what you want to convert to/from or what you want to convert to/from might be the same. Try again.");
 				return;
 			}
 
-			double number = CalculateConversion(double.Parse(value.Text), nextcurr.SelectedIndex, initialcurr.SelectedIndex);
+			double n = ConvertToNumber(value.Text);
+
+			if (n == -1) return;
+
+			double number = CalculateConversion(n, nextcurr.SelectedIndex, initialcurr.SelectedIndex);
 			string message = "";
 
 			if (nextcurr.SelectedIndex == 0) message += "€";
 			else if (nextcurr.SelectedIndex == 1) message += "$";
 			else if (nextcurr.SelectedIndex == 2) message += "£";
 
-
 			message += " " + number.ToString();
-
 			MessageBox.Show(message);
+			
 		}
+		private double ConvertToNumber(string text)
+		{
+			string answer = "";
 
+			foreach (char c in text)
+			{
+				if ('0' <= c && c <= '9') answer += c;
+				else if (c == 'k' || c == 'K') answer += "000";
+				else
+				{
+					MessageBox.Show("You can only enter numbers and 'k'. Your input is invalid. Try again.");
+					return -1;
+				}
+			}
+
+			return double.Parse(answer);
+		}
 		private double CalculateConversion(double initial, int nextindex, int initindex)
 		{
 			double number;
